@@ -15,12 +15,12 @@ def index():
     user = {'username': 'Miguel'}
     posts = [
         {
-            'author': {'username': 'John'},
-            'body': 'Beautiful day in Portland!'
+            'author': {'username': '铁乐猫'},
+            'body': '种一棵树最好的时机是十年前，其次是现在!'
         },
         {
-            'author': {'username': 'Susan'},
-            'body': 'The Avengers movie was so cool!'
+            'author': {'username': '超傻'},
+            'body': '那是我们都回不去的从前!'
         }
     ]
     return render_template('index.html', title='Home Page', posts=posts)
@@ -60,3 +60,7 @@ def register():
         flash('Congratulations, you are now a registered user!')
         return redirect(url_for('login'))
     return render_template('register.html', title='Register', form=form)
+
+@app.route('/guessword')
+def guessword():
+    return render_template('guessword.html', title='Game Page')
